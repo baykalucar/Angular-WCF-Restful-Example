@@ -70,6 +70,7 @@
     <Content Include="Scripts\loading-bar.js" />
     <Content Include="Content\loading-bar.min.css" />
     <Content Include="Scripts\loading-bar.min.js" />
+    <Content Include="test.html" />
     <Content Include="Translations\Index_en.js" />
     <Content Include="Translations\Index_tr.js" />
     <Content Include="Translations\Login_en.js" />
