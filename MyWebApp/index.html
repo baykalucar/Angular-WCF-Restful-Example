@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html ng-app="MyWebApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>My Web App</title>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular-cookies.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/loading-bar.js"></script>
+    <script src="AppScripts/app.js"></script>
+    <script src="AppScripts/language.js"></script>
+    <script src="AppScripts/translationService.js"></script>
+    <script src="AppScripts/appConfig.js"></script>
+    <script src="AppScripts/customFilters.js"></script>
+    <script src="AppScripts/httpInterceptor.js"></script>
+    <script src="IndexCtrl.js"></script>
+    <script src="Controllers/LoginCtrl.js"></script>
+    <script src="Controllers/MainCtrl.js"></script>
+    <script src="AppScripts/authentication.js"></script>
+    <script src="AppScripts/computerName.js"></script>
+    <script src="AppScripts/someWork.js"></script>
+    <script>
+        var locale = localStorage.getItem('locale');
+        if (locale) {
+            document.write('<script src="scripts/i18n/angular-locale_' + locale + '.js"><\/script>');
+        }
+    </script>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/docs.min.js"></script>
+    <link href="Content/loading-bar.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Content/theme.css" rel="stylesheet" />
+</head>
+<body ng-controller="IndexCtrl">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="javascript:void(0)">My Web App</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#main">{{translation.HOME}}</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{translation.ACTIONS}}<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="javascript:void(0)" ng-click="changeLanguage('tr')" ng-bind="translation.TURKISH"></a></li>
+                            <li><a href="javascript:void(0)" ng-click="changeLanguage('en')" ng-bind="translation.ENGLISH"></a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">{{translation.LOGININFO}}</li>
+                            <li><a href="javascript:void(0)">{{ authenticationObject.AuthenticationToken | json}}</a></li>
+                            <li><a href="javascript:void(0)">{{translation.TIME}}:  {{ authenticationObject.AuthenticationTime | jsonDate : 'medium' }}</a></li>
+                            <li><a href="javascript:void(0)">{{translation.COMPUTERNAME}}: {{ clientIP}}</a></li>
+                            <li><a href="javascript:void(0)" ng-show="authenticationObject" ng-click="logout()" ng-bind="translation.LOGOUT"></a><br /></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div class="container theme-showcase" role="main" ng-view>
+
+    </div>
+
+</body>
+</html>

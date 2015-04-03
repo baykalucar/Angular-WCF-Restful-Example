@@ -1,0 +1,11 @@
+﻿
+<form name="doWorkForm" class="form-doWork" id="doWorkForm" ng-submit="submit()" role="form">
+    <input type="email" required class="form-control" ng-model="workParam" placeholder="{{translation.WORKPARAM}}" />
+    <input type="submit" class="btn btn-lg btn-primary btn-block" value="{{translation.SUBMIT}}" /><br />
+    <div ng-show="doWorkResult">
+        {{translation.ID}} : {{doWorkResult.WorkId}}<br />
+        {{translation.RESULT}} : {{doWorkResult.WorkResultValue | number}}<br />
+        {{translation.TIME}} : {{doWorkResult.WorkTime | jsonDate : 'mediumTime' }}
+    </div>
+</form>
+
