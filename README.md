@@ -1,5 +1,3 @@
-# solusyon
-Değişik projeler.
-Overclock makinesi ayağınıza geldi.
-Halı, kilim, yolluk, paspas kenarına, halıfleks kenarına; overclock çekilir. 
-5 dakikada yapılır, hemen teslim edilir.
+# Angular - WCF - Restful
+Frontend application based on AngularJS & bootstrap.
+Backend WCF Restful services with claim based authentication & authorization.
